@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.osi.creasol.viewmodel.HomeworkDetailOneViewModel" />
+    </data>
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="73dp"
+            android:background="@drawable/back"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="29dp"
+                android:src="@drawable/ic_left" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="Homework"
+                android:textColor="@color/white_color"
+                android:textSize="23sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="13dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Today"
+                android:textColor="#404040"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="18dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="July 21, 2019"
+                android:textColor="#9C9C9C"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="19dp"
+            android:layout_marginTop="22dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="@{vm.homeworkTitle}"
+            android:textColor="#404040"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="19dp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="@{vm.subjectName}"
+            android:textColor="#9C9C9C"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="19dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:drawableRight="@drawable/ic_calender_icon"
+                android:drawablePadding="8dp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="Due"
+                android:textColor="#EA5513"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="@{vm.homeworkDueDate}"
+                android:textColor="#EA5513"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="251dp"
+    android:layout_margin="16dp"
+    android:orientation="horizontal">
+    <ImageView
+        android:id="@+id/left_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/ic_left_black"
+        android:layout_gravity="center"/>
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/homework_view_pager"
+        android:layout_height="251dp"
+        android:layout_margin="8dp"
+        android:layout_width="0dp"
+        android:layout_weight="10"/>
+    <ImageView
+        android:id="@+id/right_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/ic_right_black"
+        android:layout_gravity="center"/>
+</LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="19dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Description"
+            android:textColor="#404040"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="@{vm.homeworkDescrption}"
+            android:textColor="#9C9C9C"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+    </ScrollView>
+</layout>

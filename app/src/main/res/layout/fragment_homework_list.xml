@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.osi.creasol.viewmodel.HomeworkListViewmodel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="73dp"
+            android:background="@drawable/back"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="29dp"
+                android:src="@drawable/ic_left" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="Homework"
+                android:textColor="@color/white_color"
+                android:textSize="23sp" />
+        </RelativeLayout>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+            setRecyclerViewAdapter="@{vm.homeworkListAdapter}"
+            android:layout_width="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/assign_homework"/>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/assign_homework"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:onClick="@{vm::onAssignHomework}"
+            android:layout_alignParentBottom="true"
+            android:elevation="4dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="center"
+                android:text="Assign New Homework"
+                android:textAlignment="center"
+                android:textColor="#404040"
+                android:textSize="14sp" />
+        </androidx.cardview.widget.CardView>
+</RelativeLayout>
+
+    </LinearLayout>
+</layout>

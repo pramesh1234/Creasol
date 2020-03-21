@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.osi.creasol.viewmodel.RowHappyMomentViewModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="90dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="4dp"
+        app:cardCornerRadius="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{vm::onRowClick}"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/happy_ll"
+                android:layout_width="60dp"
+                android:layout_height="90dp"
+                android:background="@drawable/back"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@{vm.albumDate}"
+                    android:textColor="@color/white_color"
+                    android:textSize="10sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@{vm.albumMonth}"
+                    android:textColor="@color/white_color"
+                    android:textSize="19sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="1dp"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="@{vm.albumYear}"
+                    android:textColor="@color/white_color"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/moment_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="11dp"
+                android:layout_marginRight="20dp"
+                android:layout_toLeftOf="@id/happyMomentIcon"
+                android:layout_toRightOf="@+id/happy_ll"
+                android:gravity="center_vertical"
+                android:text="@{vm.albumName}"
+                android:textColor="#404040"
+                android:textSize="18sp"
+                app:fontFamily="@font/montserrat_semibold" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/happyMomentIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/ic_happy_moments_icon" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
